@@ -112,21 +112,6 @@ display(dbutils.fs.ls(landing_root))
 
 # COMMAND ----------
 
-# MAGIC %sh
-# MAGIC
-# MAGIC mkdir -p setup
-# MAGIC mkdir -p pipelines/ingestion_pipeline/transformations
-# MAGIC mkdir -p pipelines/ingestion_pipeline/utilities
-# MAGIC mkdir -p pipelines/ingestion_pipeline/tests
-# MAGIC mkdir -p pipelines/transformation_pipeline/transformations
-# MAGIC mkdir -p pipelines/transformation_pipeline/utilities
-# MAGIC mkdir -p pipelines/transformation_pipeline/tests
-# MAGIC mkdir -p jobs
-# MAGIC mkdir -p bundle/resources
-# MAGIC mkdir -p .github/workflows
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC ####Placeholder files
 # MAGIC Git does not track empty folders. If we commit right now, most of these empty folders will simply disappear from GitHub. So, we place one placeholder file inside each empty folder.
@@ -147,14 +132,7 @@ display(dbutils.fs.ls(landing_root))
 
 # COMMAND ----------
 
-# MAGIC %sh
-# MAGIC touch README.md
-# MAGIC touch requirements.txt
-# MAGIC touch data_generator.py
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC ####Commit to GitHub
 # MAGIC Make sure you have repo and workflow access to your GitHub PAT
-# MAGIC
+

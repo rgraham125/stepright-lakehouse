@@ -23,7 +23,7 @@ from pyspark.sql.types import (
 )
 
 from utilities.helpers import get_catalog, landing_path
-
+#from pipelines.ingestion_pipeline.utilities.helpers import get_catalog, landing_path
 
 ORDERS_ROW_SCHEMA = StructType(
     [
@@ -102,6 +102,7 @@ def _read_cdc_bronze(subfolder: str, row_schema: StructType):
             .withColumn("_source_file", F.col("_metadata.file_path"))
     )
 
+# creates table "bronze_orders", source is df returned from function _read_cdc_bronze()
 @dp.table(name="bronze_orders",
           comment="Raw Debezium CDC envelope for orders, exactly as it arrived. Not flattened yet.")
 def bronze_orders():
